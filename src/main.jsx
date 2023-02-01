@@ -3,8 +3,11 @@ import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
-import NuevoPaciente from './components/pages/NuevoPaciente'
+import NuevoPaciente, {action as nuevoPacienteAction} from './components/pages/NuevoPaciente'
 import Index, {loader as pacientesLoader } from './components/pages/Index'
+import EditarPaciente from './components/pages/EditarPaciente'
+import ErrorPage from './components/ErrorPage'
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -13,12 +16,19 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Index />,
-        loader: pacientesLoader 
+        loader: pacientesLoader,
+        errorElement: <ErrorPage />
       },
       {
         path: '/pacientes/nuevo',
-        element: <NuevoPaciente />
+        element: <NuevoPaciente />,
+        action: nuevoPacienteAction
+  
       },
+      {
+        path: '/pacientes/:pacienteId/editar',
+        element: <EditarPaciente />
+      }
     ]
   },
 

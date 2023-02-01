@@ -8,7 +8,7 @@ const Layout = () => {
             <h2 className="text-4xl font-black text-center text-white">CRM Pacientes</h2>
             <nav className="mt-10">
               <Link className={`${location.pathname === '/' ? 'text-blue-300' : 'text-white'} text-2xl block hover:text-blue-300 text-white`} to="/">Pacientes</Link>
-              <Link className={`${location.pathname === '/pacientes/nuevo' ? 'text-blue-300' : 'text-white'} text-2xl block hover:text-blue-300 text-white`}>Nuevo Paciente</Link>
+              <Link className={`${location.pathname === '/pacientes/nuevo' ? 'text-blue-300' : 'text-white'} text-2xl block hover:text-blue-300 text-white`} to='/pacientes/nuevo' >Nuevo Paciente</Link>
               
             </nav>
         </aside>
