@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Formulario = ({cliente}) => {
+const Formulario = ({paciente}) => {
     return (
         <>
             <div className="mb-4">
@@ -14,6 +14,7 @@ const Formulario = ({cliente}) => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Nombre del Paciente"
                     name="nombre"
+                    defaultValue={paciente?.nombre }
                 />
             </div>
             <div className="mb-4">
@@ -27,6 +28,7 @@ const Formulario = ({cliente}) => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Empresa del Paciente"
                     name="empresa"
+                    defaultValue={paciente?.empresa }
                 />
             </div>
 
@@ -41,6 +43,7 @@ const Formulario = ({cliente}) => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Email del Paciente"
                     name="email"
+                    defaultValue={paciente?.email}
                 />
             </div>
 
@@ -55,6 +58,7 @@ const Formulario = ({cliente}) => {
                     className="mt-2 block w-full p-3 bg-gray-50"
                     placeholder="Teléfono del Paciente"
                     name="telefono"
+                    defaultValue={paciente?.telefono }
                 />
             </div>
 
@@ -70,6 +74,7 @@ const Formulario = ({cliente}) => {
                     className="mt-2 block w-full p-3 bg-gray-50 h-40 align-self"
                     placeholder="Notas del Cliente"
                     name="notas"
+                    defaultValue={paciente?.notas }
                 />
             </div>
         </>

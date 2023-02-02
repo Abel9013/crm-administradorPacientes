@@ -5,9 +5,9 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './components/Layout'
 import NuevoPaciente, {action as nuevoPacienteAction} from './components/pages/NuevoPaciente'
 import Index, {loader as pacientesLoader } from './components/pages/Index'
-import EditarPaciente from './components/pages/EditarPaciente'
+import EditarPaciente, { loader as editarClienteLoader, action as editarPacienteAction} from './components/pages/EditarPaciente'
 import ErrorPage from './components/ErrorPage'
-
+import { action as eliminarPacienteAction }   from './components/Paciente'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -22,12 +22,20 @@ const router = createBrowserRouter([
       {
         path: '/pacientes/nuevo',
         element: <NuevoPaciente />,
-        action: nuevoPacienteAction
+        action: nuevoPacienteAction,
+        errorElement: <ErrorPage />
   
       },
       {
         path: '/pacientes/:pacienteId/editar',
-        element: <EditarPaciente />
+        element: <EditarPaciente />,
+        loader: editarClienteLoader,
+        action: editarPacienteAction,
+        errorElement: <ErrorPage />
+      },
+      {
+        path: '/pacientes/:pacienteId/eliminar',
+        action: eliminarPacienteAction
       }
     ]
   },
